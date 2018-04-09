@@ -2,7 +2,6 @@ require 'pry'
 
 class MusicLibraryController
   attr_accessor :importer, :ordered_song_list
-  @ordered_song_list = []
 
   def initialize(path="./db/mp3s")
     @importer = MusicImporter.new(path)
@@ -34,6 +33,7 @@ class MusicLibraryController
     name_list.sort!
 
     i = 0
+    @ordered_song_list = []
     name_list.each do |name|
       i+= 1
       song = Song.find_by_name(name)
