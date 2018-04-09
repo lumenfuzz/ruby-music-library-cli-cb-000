@@ -78,14 +78,31 @@ class MusicLibraryController
       name_list << song.name
     end
     name_list.sort!
-
     i = 0
     name_list.each do |name|
       i+= 1
       song = Song.find_by_name(name)
       puts "#{i}. #{song.name} - #{song.genre.name}"
     end
+  end
 
+  def list_songs_by_genre
+    puts "Please enter the name of a genre:"
+    input = gets.chomp
+    genre = Genre.find_by_name(input)
+    return if genre == nil
+    songs = genre.songs
+    name_list = []
+    songs.each do |song|
+      name_list << song.name
+    end
+    name_list.sort!
+    i = 0
+    name_list.each do |name|
+      i+= 1
+      song = Song.find_by_name(name)
+      puts "#{i}. #{song.artist.name} - #{song.name}"
+    end
   end
 
 end
