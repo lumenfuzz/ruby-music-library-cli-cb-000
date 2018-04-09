@@ -24,23 +24,29 @@ class MusicLibraryController
     end
   end
 
+  def alphabetize_song_list
+
+      name_list = []
+      Song.all.each do |song|
+        name_list << song.name
+      end
+      name_list.sort!
+
+      @ordered_song_list = []
+      name_list.each do |name|
+        song = Song.find_by_name(name)
+        @ordered_song_list << song
+      end
+      
+  end
+    
   def list_songs
-
-    name_list = []
-    Song.all.each do |song|
-      name_list << song.name
-    end
-    name_list.sort!
-
+    self.alphabetize_song_list
     i = 0
-    @ordered_song_list = []
-    name_list.each do |name|
+    @ordered_song_list.each do |song|
       i+= 1
-      song = Song.find_by_name(name)
-      @ordered_song_list << song
       puts "#{i}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
     end
-
   end
 
   def list_artists
@@ -111,7 +117,7 @@ class MusicLibraryController
     puts "Which song number would you like to play?"
     input = gets.chomp.to_i
     return if (input > Song.all.size || input < 1)
-    self.list_songs
+    self.alphabetize_song_list
     song_name = @ordered_song_list[input-1].name
     artist_name = @ordered_song_list[input-1].artist.name
     puts "Playing #{song_name} by #{artist_name}"
