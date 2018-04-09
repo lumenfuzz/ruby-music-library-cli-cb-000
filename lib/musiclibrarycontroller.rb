@@ -29,6 +29,7 @@ class MusicLibraryController
       name_list << song.name
     end
     name_list.sort!
+    binding.pry
 
     i = 0
     name_list.each do |name|
