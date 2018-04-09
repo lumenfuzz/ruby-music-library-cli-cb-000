@@ -25,6 +25,7 @@ class MusicImporter
     full_path = @path + "/*.mp3"
     full_file = Dir[full_path]
     full_file.each do |file|
+      binding.pry
       @files << file.split("#{@path}/")[1]
     end
   end
