@@ -26,7 +26,7 @@ class Song
   def self.new_from_filename(filename)
   file_data = filename.split(" - ")
   artist = Artist.find_or_create_by_name(file_data[0])
-  genre = Genre.find_or_create_by_name(file_data[2].scan(/[^\.]+/))
+  genre = Genre.find_or_create_by_name(file_data[2].scan(/[^\.]+/)[0])
   song = self.new(file_data[1], artist, genre)
   return song
 end
