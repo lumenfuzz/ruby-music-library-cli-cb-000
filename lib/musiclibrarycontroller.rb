@@ -5,4 +5,13 @@ class MusicLibraryController
     importer.import
   end
 
+  def call
+    puts "Welcome"
+    input = nil
+    until input == "exit"
+      puts "input?"
+      input = gets.chomp
+    end
+  end
+
 end
