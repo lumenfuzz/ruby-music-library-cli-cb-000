@@ -26,7 +26,7 @@ class Song
   def self.new_from_filename(filename)
   file_data = filename.split(" - ")
   song_data = file_data[1].scan(/[^\.]+/)
-  song = self.new(song_data[0])
+  song = self.new(song_data[0], file_data[0])
   return song
 end
 
