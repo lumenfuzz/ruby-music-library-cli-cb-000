@@ -21,6 +21,10 @@ class MusicLibraryController
     input = nil
     until input == "exit"
       input = gets.chomp
+      case input
+      when "list_songs"
+        self.list_songs
+      end
     end
   end
 
