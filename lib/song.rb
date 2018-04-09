@@ -34,7 +34,7 @@ end
 
 def self.create_from_filename(filename)
   song = self.new_from_filename(filename)
-  self.all << song
+  self.all << song unless self.all.include? song
   return song
 end
 
