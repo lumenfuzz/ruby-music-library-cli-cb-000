@@ -27,7 +27,7 @@ class Song
   file_data = filename.split(" - ")
   artist = Artist.find_or_create_by_name(file_data[0])
   genre = Genre.find_or_create_by_name(file_data[2].scan(/[^\.]+/)[0])
-  song = self.new(file_data[1], artist, genre) if song.find_by_name(file_data[1]) == nil
+  song = self.new(file_data[1], artist, genre) if Song.find_by_name(file_data[1]) == nil
   return song
 end
 
