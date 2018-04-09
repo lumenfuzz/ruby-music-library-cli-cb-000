@@ -111,7 +111,9 @@ class MusicLibraryController
     puts "Which song number would you like to play?"
     input = gets.chomp.to_i
     return if (input > Song.all.size || input < 1)
-    puts "Playing Larry Csonka by Action Bronson"
+    song_name = @ordered_song_list[input-1].name
+    artist_name = @ordered_song_list[input-1].artist.name
+    puts "Playing #{song_name} by #{artist_name}"
   end
 
 end
