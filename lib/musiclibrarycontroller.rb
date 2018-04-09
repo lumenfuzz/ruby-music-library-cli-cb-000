@@ -31,7 +31,7 @@ class MusicLibraryController
     name_list.sort!
 
     i = 0
-    list.each do |name|
+    name_list.each do |name|
       i+= 1
       song = Song.find_by_name(name)
       puts "#{i}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
