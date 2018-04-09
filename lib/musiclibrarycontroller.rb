@@ -41,4 +41,13 @@ class MusicLibraryController
 
   end
 
+  def list_artists
+
+    i = 0
+    @importer.files.each do |file|
+      i+= 1
+      puts "#{i.} " + file
+
+  end
+
 end
