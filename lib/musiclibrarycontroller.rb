@@ -42,19 +42,29 @@ class MusicLibraryController
   end
 
   def list_artists
-
     name_list = []
     Artist.all.each do |artist|
       name_list << artist.name
     end
     name_list.sort!
-
     i = 0
     name_list.each do |name|
       i+= 1
       puts "#{i}. #{name}"
     end
+  end
 
+  def list_genres
+    name_list = []
+    Genre.all.each do |genre|
+      name_list << genre.name
+    end
+    name_list.sort!
+    i = 0
+    name_list.each do |name|
+      i+= 1
+      puts "#{i}. #{name}"
+    end
   end
 
 end
