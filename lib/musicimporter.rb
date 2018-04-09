@@ -4,6 +4,11 @@ class MusicImporter
   def initialize(file_path)
     @path = file_path
     @files = []
+    full_path = @path + "/*.mp3"
+    full_file = Dir[full_path]
+    full_file.each do |file|
+      @files << file.split("#{@path}/")[1]
+    end
   end
 
   def files
@@ -20,7 +25,7 @@ class MusicImporter
     full_path = @path + "/*.mp3"
     full_file = Dir[full_path]
     full_file.each do |file|
-      @files << file
+      @files << file.split("#{@path}/")[1]
     end
   end
 
