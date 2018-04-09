@@ -107,7 +107,7 @@ class MusicLibraryController
 
   def play_song
     puts "Which song number would you like to play?"
-    input = gets.chomp
+    input = gets.chomp.to_i
     return if (input > Song.all.size || input < 1)
     puts "Playing Larry Csonka by Action Bronson"
   end
