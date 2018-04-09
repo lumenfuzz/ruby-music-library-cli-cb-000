@@ -17,7 +17,6 @@ class MusicLibraryController
     puts "What would you like to do?"
     input = nil
     until input == "exit"
-      puts "input?"
       input = gets.chomp
     end
   end
