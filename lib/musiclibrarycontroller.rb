@@ -23,10 +23,20 @@ class MusicLibraryController
   end
 
   def list_songs
-    list = Song.all.sort
-    list.each do |file|
-      puts file
+    
+    name_list = []
+    Song.all.each do |song|
+      name_list << song.name
     end
+    name_list.sort!
+
+    i = 0
+    list.each do |name|
+      i+= 1
+      song = Song.find_by_name(name)
+      puts "#{i}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+    end
+
   end
 
 end
