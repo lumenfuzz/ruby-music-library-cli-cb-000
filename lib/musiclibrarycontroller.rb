@@ -2,6 +2,7 @@ require 'pry'
 
 class MusicLibraryController
   attr_accessor :importer, :ordered_song_list
+  @ordered_song_list = []
 
   def initialize(path="./db/mp3s")
     @importer = MusicImporter.new(path)
