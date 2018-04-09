@@ -37,7 +37,7 @@ class MusicLibraryController
     name_list.each do |name|
       i+= 1
       song = Song.find_by_name(name)
-      @ordered_song_list << "#{i}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+      @ordered_song_list << song
       puts "#{i}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
     end
 
