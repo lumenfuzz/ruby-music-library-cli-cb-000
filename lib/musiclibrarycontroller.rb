@@ -47,6 +47,7 @@ class MusicLibraryController
     @importer.files.each do |file|
       i+= 1
       puts "#{i}. " + file
+    end
 
   end
 
