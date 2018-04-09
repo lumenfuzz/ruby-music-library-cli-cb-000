@@ -28,7 +28,7 @@ class Song
   song_data = file_data[1].scan(/[^\.]+/)
   artist = Artist.find_or_create_by_name(file_data[0])
   genre = Genre.find_or_create_by_name(file_data[2])
-  song = self.new(song_data[0], artist)
+  song = self.new(song_data[0], artist, genre)
   return song
 end
 
