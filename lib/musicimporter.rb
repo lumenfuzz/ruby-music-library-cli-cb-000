@@ -24,6 +24,7 @@ class MusicImporter
     full_file.each do |file|
       @files << file.split("#{@path}/")[1]
     end
+    return @files
   end
 
 end
