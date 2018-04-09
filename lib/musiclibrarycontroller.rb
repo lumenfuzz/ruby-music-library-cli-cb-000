@@ -22,7 +22,7 @@ class MusicLibraryController
     until input == "exit"
       input = gets.chomp
       case input
-      when "list_songs"
+      when "list songs"
         self.list_songs
       end
     end
