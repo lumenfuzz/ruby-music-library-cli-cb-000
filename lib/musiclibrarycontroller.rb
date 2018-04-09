@@ -1,8 +1,9 @@
 class MusicLibraryController
+  attr_accessor :importer
 
   def initialize(path="./db/mp3s")
-    importer = MusicImporter.new(path)
-    importer.import
+    @importer = MusicImporter.new(path)
+    @importer.import
   end
 
   def call
@@ -21,4 +22,9 @@ class MusicLibraryController
     end
   end
 
+  def list_songs
+    @importer.files.each do |file|
+      puts file
+    end
+    
 end
