@@ -52,7 +52,7 @@ class MusicLibraryController
     i = 0
     name_list.each do |name|
       i+= 1
-      puts "#{i}. #{artist.name}"
+      puts "#{i}. #{name}"
     end
 
   end
