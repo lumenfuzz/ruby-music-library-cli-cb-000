@@ -30,8 +30,8 @@ class MusicLibraryController
     Song.all.each do |song|
       name_list << song.name
     end
-    name_list.sort!
     binding.pry
+    name_list.sort!
 
     i = 0
     name_list.each do |name|
