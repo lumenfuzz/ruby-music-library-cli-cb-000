@@ -43,10 +43,16 @@ class MusicLibraryController
 
   def list_artists
 
+    name_list = []
+    Artist.all.each do |artist|
+      name_list << artist.name
+    end
+    name_list.sort!
+
     i = 0
-    @importer.files.each do |file|
+    name_list.each do |name|
       i+= 1
-      puts "#{i}. " + file
+      puts "#{i}. #{artist.name}"
     end
 
   end
