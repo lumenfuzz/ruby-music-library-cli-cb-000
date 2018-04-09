@@ -26,5 +26,6 @@ class MusicLibraryController
     @importer.files.each do |file|
       puts file
     end
-    
+  end
+
 end
