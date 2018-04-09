@@ -23,7 +23,8 @@ class MusicLibraryController
   end
 
   def list_songs
-    @importer.files.each do |file|
+    list = @importer.files.sort!
+    list.each do |file|
       puts file
     end
   end
